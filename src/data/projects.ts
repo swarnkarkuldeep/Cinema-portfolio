@@ -102,4 +102,52 @@ export const projects: ProjectType[] = [
       "https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     ]
   },
+  {
+    id: 19,
+    title: "Neon Skyline",
+    category: 'Feature Film',
+    description: "A futuristic noir set in a sprawling neon-lit metropolis, following a detective unraveling a conspiracy that blurs the line between human and machine. Stunning visuals and a haunting synth soundtrack create an unforgettable cinematic experience.",
+    image: "https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    year: 2024,
+    director: "Kenji Sato",
+    cinematographer: "Lila Zhang",
+    producer: "Neon City Studios",
+    cast: ["Takeshi Kitano", "Gemma Chan"],
+    awards: ["Best Visual Effects - Tokyo Sci-Fi Fest", "Audience Award - Future Film Expo"],
+    moreImages: [
+      "https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    ]
+  },
+  {
+    id: 20,
+    title: "Wings of Freedom",
+    category: 'Documentary',
+    description: "An uplifting documentary chronicling the journey of a conservationist working to save endangered birds of prey. Through breathtaking aerial cinematography, the film highlights the beauty of nature and the urgent need for environmental stewardship.",
+    image: "https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    year: 2024,
+    director: "Elena Petrova",
+    cinematographer: "Samir Patel",
+    producer: "Earth Guardians Films",
+    cast: ["Elena Petrova", "Wildlife biologists"],
+    awards: ["Best Nature Documentary - Green Planet Awards"],
+    moreImages: [
+      "https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    ]
+  },
+  {
+    id: 21,
+    title: "Pulse",
+    category: 'Music Video',
+    description: "A high-energy music video blending urban dance, street art, and digital animation. Set in the heart of a bustling city, the video celebrates youth culture, creativity, and the universal language of rhythm.",
+    image: "https://images.pexels.com/photos/1707828/pexels-photo-1707828.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    year: 2024,
+    director: "Jordan Lee",
+    cinematographer: "Priya Singh",
+    producer: "Urban Vibes Media",
+    cast: ["Street dancers", "Graffiti artists"],
+    awards: ["Best Urban Music Video - City Beats Awards"],
+    moreImages: [
+      "https://images.pexels.com/photos/1707828/pexels-photo-1707828.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    ]
+  },
 ];

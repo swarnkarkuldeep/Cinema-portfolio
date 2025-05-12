@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Menu, X, Instagram, Twitter, Linkedin } from 'lucide-react';
 
 const Navigation: React.FC = () => {

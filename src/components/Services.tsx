@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Film, Camera, Monitor, Award, Users, Pencil, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 

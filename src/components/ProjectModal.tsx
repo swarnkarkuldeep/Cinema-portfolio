@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { X, ChevronLeft, ChevronRight, Trophy } from 'lucide-react';
 import { ProjectType } from '../types';
 import { motion } from 'framer-motion';

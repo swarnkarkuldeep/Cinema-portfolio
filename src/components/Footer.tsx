@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Instagram, Twitter, Linkedin, Mail, MapPin, ArrowRight, Github } from 'lucide-react';
 
 const Footer: React.FC = () => {
@@ -183,18 +183,18 @@ const Footer: React.FC = () => {
             <strong>LEGAL DISCLAIMER:</strong> This website is designed and developed exclusively for portfolio demonstration purposes and does not represent an actual commercial entity, film production company, or service provider. All visual content, including images, videos, and graphic elements, are either licensed, used under fair use for educational purposes, or sourced from royalty-free providers. All intellectual property rights belong to their respective owners. The film projects, team members, and services depicted herein are fictional and presented solely to demonstrate web design and development capabilities. Any resemblance to actual persons, companies, or creative works is entirely coincidental. This website was developed by Kuldeep Swarnkar as a non-commercial portfolio project to showcase proficiency in modern web development technologies including React, TypeScript, and Tailwind CSS.
           </p>
           <div className="mt-4 pt-4 border-t border-white/5 flex flex-col sm:flex-row items-center sm:items-start justify-between gap-4">
-            <p className="text-gray-400">
+            <div className="flex items-center gap-2">
               <a href="mailto:kuldeepswarnkar14@gmail.com" className="text-white hover:underline">kuldeepswarnkar14@gmail.com</a>
-            </p>
-            <a 
-              href="https://github.com/kuldeepsinghIDBC" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full hover:bg-white/15 transition-colors glow-on-hover"
-            >
-              <Github size={16} className="text-white" />
-              <span className="text-white text-xs">View on GitHub</span>
-            </a>
+              <a 
+                href="https://github.com/kuldeepsinghIDBC" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/15 transition-colors text-white text-xs"
+              >
+                <Github size={16} className="text-white" />
+                <span className="text-white text-xs">View on GitHub</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>

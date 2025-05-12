@@ -1,8 +1,7 @@
-import React, { ReactNode } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 interface ParallaxWrapperProps {
-  children: ReactNode;
+  children: React.ReactNode;
   className?: string;
   offset?: number;
 }

@@ -46,7 +46,7 @@ const InteractiveBackground: React.FC = () => {
     const particlesArray: Particle[] = [];
     const numberOfParticles = getParticleCount();
     
-    let mousePosition = {
+    const mousePosition = {
       x: 0,
       y: 0,
       radius: window.innerWidth < 768 ? 100 : 150 // Smaller radius on mobile
@@ -126,8 +126,8 @@ const InteractiveBackground: React.FC = () => {
         // Use fewer kanji characters on mobile to improve performance
         this.type = Math.random() > (window.innerWidth < 768 ? 0.95 : 0.9) ? 'kanji' : 'circle';
         
-        // Red tint for the Japanese aesthetic
-        this.color = `rgba(214, 2, 9, ${this.opacity})`;
+        // Replace red color with white for particle color
+        this.color = `rgba(255,255,255,${this.opacity})`;
         
         // Add subtle movement with velocity
         this.vx = Math.random() * 0.2 - 0.1;
@@ -246,7 +246,7 @@ const InteractiveBackground: React.FC = () => {
           );
           
           if (distance < connectionDistance) {
-            ctx.strokeStyle = `rgba(214, 2, 9, ${connectionOpacity * (connectionDistance - distance) / connectionDistance})`;
+            ctx.strokeStyle = `rgba(255,255,255,${connectionOpacity * (connectionDistance - distance) / connectionDistance})`;
             ctx.lineWidth = 0.2;
             ctx.beginPath();
             ctx.moveTo(particlesArray[a].x, particlesArray[a].y);

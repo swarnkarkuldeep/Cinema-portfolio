@@ -1,4 +1,3 @@
-import React from 'react';
 import { ProjectType } from '../types';
 import { motion } from 'framer-motion';
 
@@ -26,8 +25,7 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ projects, openModal }) => {
   // Calculate total columns used per row to fill last row with placeholders if needed
   const gridCols = 12;
   let colSum = 0;
-  let rowItems: { project: ProjectType, gridClass: string }[] = [];
-  let placeholders = 0;
+  const rowItems: { project: ProjectType, gridClass: string }[] = [];
 
   projects.forEach((project, i) => {
     const gridClass = getVariant(i);
@@ -36,11 +34,6 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ projects, openModal }) => {
     colSum += colSpan;
     rowItems.push({ project, gridClass });
   });
-
-  // If the last row is not full, add placeholders
-  if (colSum % gridCols !== 0) {
-    placeholders = gridCols - (colSum % gridCols);
-  }
 
   return (
     <section id="projects" className="px-6 py-20 md:py-32">
