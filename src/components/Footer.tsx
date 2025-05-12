@@ -166,7 +166,7 @@ const Footer: React.FC = () => {
           <p className="mb-2"><strong>DISCLAIMER:</strong> This website is created solely for portfolio and demonstration purposes of web development skills. It is not a real business entity.</p>
           <p className="mb-2">All images, logos, and visual content used on this site belong to their respective copyright owners and are used here for illustrative purposes only. No copyright infringement is intended.</p>
           <p className="mb-2">Any resemblance to actual films, production companies, or industry professionals is purely coincidental. The projects displayed are fictional and created exclusively to showcase web design and development capabilities.</p>
-          <p className="mb-2">This is a non-commercial project. I am the developer of this website, and the complete source code is available on my GitHub.</p>
+          <p className="mb-2">This is a non-commercial project. I Kuldeep Swarnkar am the developer of this website, and the complete source code is available on my GitHub. You can mail me if you want contacat me </p>
           
           <div className="mt-4 pt-4 border-t border-white/5 flex flex-col sm:flex-row items-center sm:items-start justify-between gap-4">
             <p className="text-gray-400">

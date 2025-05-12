@@ -3,8 +3,11 @@ const urlsToCache = [
   '/',
   '/index.html',
   '/manifest.json',
-  '/vite.svg',
-  // Add more assets as needed
+  '/favicon.svg',
+  '/icon-192.png',
+  '/icon-512.png',
+  '/assets/index.css',
+  '/assets/index.js'
 ];
 
 self.addEventListener('install', event => {

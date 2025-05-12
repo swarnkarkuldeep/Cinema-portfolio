@@ -7,4 +7,7 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  // Comment this line for local development
+  // Uncomment before pushing to GitHub Pages
+  // base: '/cinema-portfolio/',
 });
