@@ -34,7 +34,7 @@ A modern, responsive cinema production company portfolio website built with Reac
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/yourusername/cinema-portfolio.git
+   git clone https://github.com/swarnkarkuldeep/Cinema-portfolio.git
    cd cinema-portfolio
    ```
 
