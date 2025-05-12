@@ -70,7 +70,7 @@ const Team: React.FC = () => {
                 <div className="text-gray-400 font-mono text-sm mb-1 animate-fade-in-right" style={{animationDelay: `${0.4 + idx * 0.1}s`}}>
                   {member.fun}
                 </div>
-                <div className="text-[#d60209] font-mono text-xs animate-fade-in-right" style={{animationDelay: `${0.5 + idx * 0.1}s`}}>
+                <div className="text-white font-mono text-xs animate-fade-in-right" style={{animationDelay: `${0.5 + idx * 0.1}s`}}>
                   [{member.role}]
                 </div>
               </motion.div>

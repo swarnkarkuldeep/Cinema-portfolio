@@ -80,8 +80,8 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, onNext, o
           <div className="absolute top-0 left-0 m-6 bg-black/70 px-5 py-3 rounded-lg shadow-lg">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-1 leading-tight">{project.title}</h2>
             <div className="flex flex-wrap items-center gap-2 text-gray-300 text-base mb-1">
-              <span className="uppercase tracking-widest text-xs text-[#d60209] font-semibold">{project.category}</span>
-              <span className="text-[#d60209]">•</span>
+              <span className="uppercase tracking-widest text-xs text-white font-semibold">{project.category}</span>
+              <span className="text-white">•</span>
               <span>{project.year}</span>
             </div>
           </div>
@@ -140,7 +140,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, onNext, o
           </div>
           {project.awards && project.awards.length > 0 && (
             <div className="mb-2">
-              <h3 className="text-xl font-bold text-white mb-3 uppercase tracking-wider flex items-center gap-2"><Trophy size={20} className="text-[#d60209]" /> Awards</h3>
+              <h3 className="text-xl font-bold text-white mb-3 uppercase tracking-wider flex items-center gap-2"><Trophy size={20} className="text-white" /> Awards</h3>
               <ul className="list-disc pl-7 text-gray-300">
                 {project.awards.map((award, index) => (
                   <li key={index} className="mb-1">{award}</li>

@@ -67,7 +67,7 @@ const Services: React.FC = () => {
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-7 text-white tracking-tight">Our Services</h2>
           <p className="text-gray-300 text-xl">
-            From concept to screen, <span className="text-[#d60209] font-semibold">CINĒMA</span> offers comprehensive production services tailored to your creative vision.
+            From concept to screen, <span className="text-white font-semibold">CINĒMA</span> offers comprehensive production services tailored to your creative vision.
           </p>
         </div>
         <div 

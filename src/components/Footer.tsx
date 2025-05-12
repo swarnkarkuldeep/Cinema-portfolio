@@ -30,12 +30,23 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer id="contact" className="pt-20 pb-10 px-6 bg-black border-t border-white/10">
+    <footer id="contact" className="pt-20 pb-10 px-6 bg-black border-t border-white/10 relative">
+      {/* Japanese-inspired decorative element */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-black via-white to-black"></div>
+      
+      {/* Subtle vertical Japanese characters */}
+      <div className="absolute right-4 top-24 hidden lg:flex flex-col items-center opacity-10 pointer-events-none">
+        <div className="writing-vertical text-6xl text-white font-light tracking-wider">
+          シネマ
+        </div>
+      </div>
+
       <div className="px-6">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
           {/* Contact Form Section */}
           <div className="lg:col-span-2 animation-fade-in">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">Get in Touch</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-2">Get in Touch</h2>
+            <p className="text-white mb-8 tracking-widest text-sm font-light">お問い合わせ</p>
             <p className="text-gray-300 mb-8 max-w-xl">
               Whether you're looking to collaborate on a project or just want to say hello, 
               we'd love to hear from you.
@@ -99,7 +110,10 @@ const Footer: React.FC = () => {
                 </div>
                 <div className="text-gray-300">
                   <p className="mb-1">8721 Sunset Blvd, Los Angeles, CA</p>
-                  <p>1-3-5 Shibuya, Tokyo, Japan</p>
+                  <p className="flex items-center">
+                    <span className="text-white mr-2 text-xs">東京</span>
+                    1-3-5 Shibuya, Tokyo, Japan
+                  </p>
                 </div>
               </div>
             </div>
@@ -108,7 +122,8 @@ const Footer: React.FC = () => {
           {/* Studio Info Section */}
           <div className="animation-fade-in animation-delay-300">
             <div className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">CINĒMA</h2>
+              <h2 className="text-2xl font-bold mb-1">CINĒMA</h2>
+              <p className="text-xs text-white mb-4 tracking-[0.25em]">シネマスタジオ</p>
               <p className="text-gray-400">
                 Creating cinematic experiences that captivate, inspire, and transform since 2025.
               </p>
@@ -142,7 +157,8 @@ const Footer: React.FC = () => {
             </div>
             
             <div>
-              <h3 className="text-lg font-medium mb-4">Working Hours</h3>
+              <h3 className="text-lg font-medium mb-1">Working Hours</h3>
+              <p className="text-xs text-white mb-3 tracking-wider">営業時間</p>
               <p className="text-gray-400 mb-1">Monday - Friday: 9am - 6pm</p>
               <p className="text-gray-400">Weekends: By appointment only</p>
             </div>
@@ -151,7 +167,7 @@ const Footer: React.FC = () => {
         
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} CINĒMA. All rights reserved.
+            &copy; {new Date().getFullYear()} CINĒMA. <span className="text-xs tracking-wider">版権所有</span>
           </p>
           
           <div className="flex flex-wrap gap-4 text-sm text-gray-500">
@@ -163,14 +179,12 @@ const Footer: React.FC = () => {
         
         {/* Disclaimer */}
         <div className="mt-8 pt-6 border-t border-white/5 text-gray-500 text-xs leading-relaxed animate-fade-in-up" style={{animationDelay: '0.5s'}}>
-          <p className="mb-2"><strong>DISCLAIMER:</strong> This website is created solely for portfolio and demonstration purposes of web development skills. It is not a real business entity.</p>
-          <p className="mb-2">All images, logos, and visual content used on this site belong to their respective copyright owners and are used here for illustrative purposes only. No copyright infringement is intended.</p>
-          <p className="mb-2">Any resemblance to actual films, production companies, or industry professionals is purely coincidental. The projects displayed are fictional and created exclusively to showcase web design and development capabilities.</p>
-          <p className="mb-2">This is a non-commercial project. I Kuldeep Swarnkar am the developer of this website, and the complete source code is available on my GitHub. You can mail me if you want contacat me </p>
-          
+          <p>
+            <strong>LEGAL DISCLAIMER:</strong> This website is designed and developed exclusively for portfolio demonstration purposes and does not represent an actual commercial entity, film production company, or service provider. All visual content, including images, videos, and graphic elements, are either licensed, used under fair use for educational purposes, or sourced from royalty-free providers. All intellectual property rights belong to their respective owners. The film projects, team members, and services depicted herein are fictional and presented solely to demonstrate web design and development capabilities. Any resemblance to actual persons, companies, or creative works is entirely coincidental. This website was developed by Kuldeep Swarnkar as a non-commercial portfolio project to showcase proficiency in modern web development technologies including React, TypeScript, and Tailwind CSS.
+          </p>
           <div className="mt-4 pt-4 border-t border-white/5 flex flex-col sm:flex-row items-center sm:items-start justify-between gap-4">
             <p className="text-gray-400">
-              <a href="mailto:kuldeepswarnkar14@gmail.com" className="text-[#d60209] hover:underline">kuldeepswarnkar14@gmail.com</a>
+              <a href="mailto:kuldeepswarnkar14@gmail.com" className="text-white hover:underline">kuldeepswarnkar14@gmail.com</a>
             </p>
             <a 
               href="https://github.com/kuldeepsinghIDBC" 

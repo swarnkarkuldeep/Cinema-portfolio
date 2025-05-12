@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ParallaxWrapper, ParallaxSection } from './components/ParallaxWrapper';
+import { ParallaxSection } from './components/ParallaxWrapper';
 import Hero from './components/Hero';
 import Navigation from './components/Navigation';
 import ProjectGrid from './components/ProjectGrid';
@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import { ProjectType } from './types';
 import { projects } from './data/projects';
 import Grain from './components/Grain';
+import InteractiveBackground from './components/InteractiveBackground';
 import './styles/animations.css';
 
 function App() {
@@ -62,6 +63,7 @@ function App() {
           transition={pageTransition}
           className="bg-black text-white"
         >
+          <InteractiveBackground />
           <Navigation />
           <ParallaxSection>
             <Hero />
