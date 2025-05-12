@@ -24,5 +24,3 @@ dist-ssr
 *.sw?
 .env
 
-# Bolt specific files
-.bolt/
