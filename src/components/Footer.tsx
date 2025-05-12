@@ -186,7 +186,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center gap-2">
               <a href="mailto:kuldeepswarnkar14@gmail.com" className="text-white hover:underline">kuldeepswarnkar14@gmail.com</a>
               <a 
-                href="https://github.com/kuldeepsinghIDBC" 
+                href="https://github.com/swarnkarkuldeep/Cinema-portfolio" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/15 transition-colors text-white text-xs"

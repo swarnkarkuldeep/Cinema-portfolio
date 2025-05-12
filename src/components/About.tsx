@@ -22,7 +22,7 @@ const About: React.FC = () => {
           <div className="grid grid-cols-2 gap-4">
             <div className="aspect-[3/4] overflow-hidden animation-fade-in animation-delay-200">
               <img
-                src="https://images.pexels.com/photos/2873507/pexels-photo-2873507.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                src="/covers/ms.jpg"
                 alt="Professional camera equipment on set"
                 loading="lazy"
                 className="w-full h-full object-cover"
@@ -30,7 +30,7 @@ const About: React.FC = () => {
             </div>
             <div className="aspect-[3/4] overflow-hidden mt-8 animation-fade-in animation-delay-400">
               <img
-                src="https://images.pexels.com/photos/66134/pexels-photo-66134.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                src="/covers/ms2.jpg"
                 alt="Film crew working on a production set"
                 loading="lazy"
                 className="w-full h-full object-cover"
