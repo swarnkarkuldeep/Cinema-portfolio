@@ -31,8 +31,17 @@ function App() {
     const handleScroll = () => {
       setShowBackToTop(window.scrollY > 300);
     };
+
+    // Add multiple event listeners for better cross-device support
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('touchmove', handleScroll);
+    window.addEventListener('wheel', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('touchmove', handleScroll);
+      window.removeEventListener('wheel', handleScroll);
+    };
   }, []);
 
   const pageVariants = {
