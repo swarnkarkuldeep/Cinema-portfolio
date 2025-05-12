@@ -42,7 +42,7 @@ const Navigation: React.FC = () => {
           scrolled ? 'bg-black/90 backdrop-blur-sm py-3' : 'bg-transparent py-5'
         }`}
       >
-        <div className="container mx-auto px-6 flex justify-between items-center">
+        <div className="px-6 flex justify-between items-center">
           <a href="#" className="text-2xl font-bold tracking-tighter hover:opacity-80 transition-opacity">
             CINĒMA
           </a>

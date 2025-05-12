@@ -10,9 +10,7 @@ interface ProjectModalProps {
 }
 
 const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, onNext, onPrev }) => {
-  const [activeImage, setActiveImage] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
-  const allImages = [project.image, ...(project.moreImages || [])];
 
   useEffect(() => {
     setIsLoaded(false);
@@ -33,18 +31,6 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, onNext, o
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [handleKeyDown]);
-
-  const goToImage = (index: number) => {
-    setActiveImage(index);
-  };
-
-  const nextImage = () => {
-    setActiveImage((prev) => (prev + 1) % allImages.length);
-  };
-
-  const prevImage = () => {
-    setActiveImage((prev) => (prev - 1 + allImages.length) % allImages.length);
-  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 overflow-y-auto">
@@ -71,45 +57,11 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, onNext, o
           <div className="relative">
             <div className="aspect-[16/9] overflow-hidden bg-gray-900">
               <img 
-                src={allImages[activeImage]} 
-                alt={`${project.title} - image ${activeImage + 1}`}
+                src={project.image} 
+                alt={project.title}
                 className="w-full h-full object-cover"
               />
             </div>
-            
-            {allImages.length > 1 && (
-              <>
-                <button 
-                  onClick={prevImage}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-black/50 hover:bg-black/70 rounded-full transition-colors"
-                  aria-label="Previous image"
-                >
-                  <ChevronLeft size={20} />
-                </button>
-                <button 
-                  onClick={nextImage}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-black/50 hover:bg-black/70 rounded-full transition-colors"
-                  aria-label="Next image"
-                >
-                  <ChevronRight size={20} />
-                </button>
-              </>
-            )}
-            
-            {allImages.length > 1 && (
-              <div className="flex justify-center mt-4 space-x-2">
-                {allImages.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => goToImage(index)}
-                    className={`w-2 h-2 rounded-full transition-all ${
-                      activeImage === index ? 'bg-white w-4' : 'bg-white/30'
-                    }`}
-                    aria-label={`Go to image ${index + 1}`}
-                  />
-                ))}
-              </div>
-            )}
           </div>
           
           <div>

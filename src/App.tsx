@@ -71,7 +71,7 @@ function App() {
           <ParallaxSection>
             <Hero />
           </ParallaxSection>
-          <ParallaxWrapper offset={50}>
+          <ParallaxSection offset={60}>
             <ProjectGrid 
               projects={projects}
               openModal={(project: ProjectType) => {
@@ -79,16 +79,16 @@ function App() {
                 setIsModalOpen(true);
               }}
             />
-          </ParallaxWrapper>
-          <ParallaxWrapper offset={75}>
+          </ParallaxSection>
+          <ParallaxSection offset={80}>
             <About />
-          </ParallaxWrapper>
+          </ParallaxSection>
           <ParallaxSection offset={100}>
             <Services />
           </ParallaxSection>
-          <ParallaxWrapper offset={50}>
+          <ParallaxSection offset={60}>
             <Team />
-          </ParallaxWrapper>
+          </ParallaxSection>
           <Footer />
           <Grain />
           {isModalOpen && selectedProject && (
