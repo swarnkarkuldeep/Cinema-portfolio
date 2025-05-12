@@ -3,16 +3,21 @@ import { projects } from '../data/projects';
 import { Trophy, ChevronLeft } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const ProjectPage: React.FC = () => {
+interface ProjectPageProps {
+  projectIndex?: number;
+  onClose?: () => void;
+}
+
+const ProjectPage: React.FC<ProjectPageProps> = ({ projectIndex, onClose }) => {
   const { id } = useParams<{ id: string }>();
-  const project = projects.find(p => p.id === Number(id));
+  const project = projectIndex !== undefined ? projects[projectIndex] : projects.find(p => p.id === Number(id));
 
   if (!project) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white">
         <h1 className="text-5xl font-bold mb-4">404</h1>
         <p className="text-2xl mb-6 text-gray-300">Project not found.</p>
-        <Link to="/" className="text-white underline text-lg">Go back home</Link>
+        <Link to="/" className="text-white underline text-lg" onClick={onClose}>Go back home</Link>
       </div>
     );
   }
@@ -24,6 +29,7 @@ const ProjectPage: React.FC = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -40 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
+      onClick={onClose}
     >
       <motion.div
         className="max-w-6xl w-full flex flex-col md:flex-row bg-black rounded-2xl shadow-2xl border border-white/10 relative"
