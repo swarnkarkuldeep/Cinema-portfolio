@@ -27,6 +27,7 @@ const About: React.FC = () => {
               <img 
                 src="https://images.pexels.com/photos/2873507/pexels-photo-2873507.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
                 alt="Camera equipment"
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -34,6 +35,7 @@ const About: React.FC = () => {
               <img 
                 src="https://images.pexels.com/photos/66134/pexels-photo-66134.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
                 alt="Film production"
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
             </div>

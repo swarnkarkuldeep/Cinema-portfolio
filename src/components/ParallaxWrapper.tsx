@@ -17,7 +17,7 @@ export const ParallaxWrapper: React.FC<ParallaxWrapperProps> = ({
 
   return (
     <motion.div 
-      style={{ y }}
+      style={{ ...{ willChange: 'transform, opacity' }, y }}
       className={className}
     >
       {children}
@@ -37,7 +37,7 @@ export const ParallaxSection: React.FC<ParallaxWrapperProps> = ({
 
   return (
     <motion.section 
-      style={{ y, scale, opacity }}
+      style={{ ...{ willChange: 'transform, opacity' }, y, scale, opacity }}
       className={className}
     >
       {children}

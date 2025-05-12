@@ -51,30 +51,31 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ projects, openModal }) => {
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              className="group mb-0 break-inside-avoid cursor-pointer overflow-hidden relative w-full"
+              className="group mb-0 break-inside-avoid cursor-pointer overflow-hidden relative w-full hover-lift"
               onClick={() => openModal(project)}
-              style={{ zIndex: 1, fontFamily: 'Rubik, sans-serif' }}
+              style={{ zIndex: 1, fontFamily: 'Rubik, sans-serif', willChange: 'transform, opacity' }}
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.7, delay: index * 0.05, ease: 'easeOut' }}
             >
-              <div className="relative w-full h-auto overflow-hidden shadow-lg">
+              <div className="relative w-full h-auto overflow-hidden shadow-lg img-hover-zoom">
                 <img
                   src={project.image}
-                  alt={project.title}
+                  alt={project.title + ' project image'}
+                  loading="lazy"
                   className="object-cover w-full h-auto transform transition-transform duration-700 group-hover:scale-110"
                   style={{ display: 'block', width: '100%' }}
                 />
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-0 left-0 p-6 w-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                    <span className="inline-block text-sm tracking-wider mb-2 text-[#d60209]">
+                    <span className="inline-block text-sm tracking-wider mb-2 text-[#d60209] animate-fade-in-up" style={{animationDelay: '0.1s'}}>
                       {project.category}
                     </span>
-                    <h3 className="text-4xl font-bold transform group-hover:translate-x-4 transition-transform duration-500">
+                    <h3 className="text-4xl font-bold transform group-hover:translate-x-4 transition-transform duration-500 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
                       {project.title}
                     </h3>
-                    <p className="text-xl text-gray-300 mt-2 max-w-[90%] opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
+                    <p className="text-xl text-gray-300 mt-2 max-w-[90%] opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 animate-fade-in-up" style={{animationDelay: '0.3s'}}>
                       {project.year} • {project.director}
                     </p>
                   </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Instagram, Twitter, Linkedin, Mail, MapPin, ArrowRight } from 'lucide-react';
+import { Instagram, Twitter, Linkedin, Mail, MapPin, ArrowRight, Github } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
                   <div className="md:self-end">
                     <button 
                       type="submit" 
-                      className="w-full md:w-auto px-6 py-3 bg-white text-black font-medium rounded hover:bg-white/90 transition-colors flex items-center justify-center group"
+                      className="w-full md:w-auto px-6 py-3 bg-white text-black font-medium rounded hover:bg-white/90 transition-colors flex items-center justify-center group btn-pulse"
                     >
                       Subscribe 
                       <ArrowRight size={18} className="ml-2 transition-transform group-hover:translate-x-1" />
@@ -119,22 +119,22 @@ const Footer: React.FC = () => {
               <div className="flex space-x-4">
                 <a 
                   href="#" 
-                  className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"
-                  aria-label="Instagram"
+                  className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors glow-on-hover"
+                  aria-label="Instagram link"
                 >
                   <Instagram size={18} />
                 </a>
                 <a 
                   href="#" 
-                  className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"
-                  aria-label="Twitter"
+                  className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors glow-on-hover"
+                  aria-label="Twitter link"
                 >
                   <Twitter size={18} />
                 </a>
                 <a 
                   href="#" 
-                  className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"
-                  aria-label="LinkedIn"
+                  className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors glow-on-hover"
+                  aria-label="LinkedIn link"
                 >
                   <Linkedin size={18} />
                 </a>
@@ -158,6 +158,29 @@ const Footer: React.FC = () => {
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
             <a href="#" className="hover:text-white transition-colors">Careers</a>
+          </div>
+        </div>
+        
+        {/* Disclaimer */}
+        <div className="mt-8 pt-6 border-t border-white/5 text-gray-500 text-xs leading-relaxed animate-fade-in-up" style={{animationDelay: '0.5s'}}>
+          <p className="mb-2"><strong>DISCLAIMER:</strong> This website is created solely for portfolio and demonstration purposes of web development skills. It is not a real business entity.</p>
+          <p className="mb-2">All images, logos, and visual content used on this site belong to their respective copyright owners and are used here for illustrative purposes only. No copyright infringement is intended.</p>
+          <p className="mb-2">Any resemblance to actual films, production companies, or industry professionals is purely coincidental. The projects displayed are fictional and created exclusively to showcase web design and development capabilities.</p>
+          <p className="mb-2">This is a non-commercial project. I am the developer of this website, and the complete source code is available on my GitHub.</p>
+          
+          <div className="mt-4 pt-4 border-t border-white/5 flex flex-col sm:flex-row items-center sm:items-start justify-between gap-4">
+            <p className="text-gray-400">
+              <a href="mailto:kuldeepswarnkar14@gmail.com" className="text-[#d60209] hover:underline">kuldeepswarnkar14@gmail.com</a>
+            </p>
+            <a 
+              href="https://github.com/kuldeepsinghIDBC" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full hover:bg-white/15 transition-colors glow-on-hover"
+            >
+              <Github size={16} className="text-white" />
+              <span className="text-white text-xs">View on GitHub</span>
+            </a>
           </div>
         </div>
       </div>

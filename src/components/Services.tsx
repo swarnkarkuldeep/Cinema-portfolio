@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Film, Camera, Monitor, Award, Users, Pencil, ChevronLeft, ChevronRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const SERVICES = [
   {
@@ -82,12 +83,34 @@ const Services: React.FC = () => {
           >
             <ChevronLeft size={32} />
           </button>
-          <div className={`w-full shadow-2xl flex flex-col items-center text-center px-8 md:px-16 py-24 h-[520px] bg-white`}>
-            <div className="mb-12 flex items-center justify-center">
+          <div className={`w-full shadow-2xl flex flex-col items-center text-center px-8 md:px-16 py-24 h-[520px] bg-white`} style={{ willChange: 'transform, opacity' }}>
+            <motion.div 
+              className="mb-12 flex items-center justify-center"
+              key={current}
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
               {SERVICES[current].icon}
-            </div>
-            <h3 className="text-3xl md:text-4xl font-bold mb-6 text-black">{SERVICES[current].title}</h3>
-            <p className="text-black/80 text-xl mb-2">{SERVICES[current].description}</p>
+            </motion.div>
+            <motion.h3 
+              className="text-3xl md:text-4xl font-bold mb-6 text-black"
+              key={`title-${current}`}
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              {SERVICES[current].title}
+            </motion.h3>
+            <motion.p 
+              className="text-black/80 text-xl mb-2"
+              key={`desc-${current}`}
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              {SERVICES[current].description}
+            </motion.p>
           </div>
           <button
             onClick={goNext}
@@ -103,7 +126,7 @@ const Services: React.FC = () => {
             <button
               key={idx}
               onClick={() => setCurrent(idx)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${idx === current ? 'bg-white' : 'bg-white/30'}`}
+              className={`w-3 h-3 rounded-full transition-all duration-500 ${idx === current ? 'bg-white scale-125' : 'bg-white/30 hover:bg-white/50'}`}
               aria-label={`Go to service ${idx + 1}`}
             />
           ))}

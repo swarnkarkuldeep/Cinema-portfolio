@@ -43,7 +43,7 @@ const Navigation: React.FC = () => {
         }`}
       >
         <div className="px-6 flex justify-between items-center">
-          <a href="#" className="text-2xl font-bold tracking-tighter hover:opacity-80 transition-opacity">
+          <a href="#" className="text-2xl font-bold tracking-tighter hover:opacity-80 transition-opacity text-glow-on-hover">
             CINĒMA
           </a>
           
@@ -56,13 +56,13 @@ const Navigation: React.FC = () => {
           </nav>
           
           <div className="hidden md:flex space-x-4">
-            <a href="#" aria-label="Instagram" className="text-white hover:text-gray-300 transition-colors">
+            <a href="#" aria-label="Instagram link" className="text-white hover:text-gray-300 transition-colors hover-scale-sm">
               <Instagram size={18} />
             </a>
-            <a href="#" aria-label="Twitter" className="text-white hover:text-gray-300 transition-colors">
+            <a href="#" aria-label="Twitter link" className="text-white hover:text-gray-300 transition-colors hover-scale-sm">
               <Twitter size={18} />
             </a>
-            <a href="#" aria-label="LinkedIn" className="text-white hover:text-gray-300 transition-colors">
+            <a href="#" aria-label="LinkedIn link" className="text-white hover:text-gray-300 transition-colors hover-scale-sm">
               <Linkedin size={18} />
             </a>
           </div>
@@ -79,7 +79,7 @@ const Navigation: React.FC = () => {
       
       {/* Mobile Menu */}
       <div 
-        className={`fixed inset-0 bg-black z-50 flex flex-col justify-center items-center transition-transform duration-500 ease-in-out ${
+        className={`fixed inset-0 bg-black z-50 flex flex-col justify-center items-center transition-all duration-500 ease-in-out ${
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
@@ -92,11 +92,11 @@ const Navigation: React.FC = () => {
         </button>
         
         <nav className="flex flex-col space-y-8 text-center">
-          <button onClick={() => scrollTo('about')} className="text-2xl font-light tracking-wider hover:text-gray-300 transition-colors">About</button>
-          <button onClick={() => scrollTo('services')} className="text-2xl font-light tracking-wider hover:text-gray-300 transition-colors">Services</button>
-          <button onClick={() => scrollTo('projects')} className="text-2xl font-light tracking-wider hover:text-gray-300 transition-colors">Projects</button>
-          <button onClick={() => scrollTo('team')} className="text-2xl font-light tracking-wider hover:text-gray-300 transition-colors">Team</button>
-          <button onClick={() => scrollTo('contact')} className="text-2xl font-light tracking-wider hover:text-gray-300 transition-colors">Contact</button>
+          <button onClick={() => scrollTo('about')} className="text-2xl font-light tracking-wider hover:text-gray-300 transition-colors text-glow-on-hover">About</button>
+          <button onClick={() => scrollTo('services')} className="text-2xl font-light tracking-wider hover:text-gray-300 transition-colors text-glow-on-hover">Services</button>
+          <button onClick={() => scrollTo('projects')} className="text-2xl font-light tracking-wider hover:text-gray-300 transition-colors text-glow-on-hover">Projects</button>
+          <button onClick={() => scrollTo('team')} className="text-2xl font-light tracking-wider hover:text-gray-300 transition-colors text-glow-on-hover">Team</button>
+          <button onClick={() => scrollTo('contact')} className="text-2xl font-light tracking-wider hover:text-gray-300 transition-colors text-glow-on-hover">Contact</button>
         </nav>
         
         <div className="mt-16 flex space-x-6">

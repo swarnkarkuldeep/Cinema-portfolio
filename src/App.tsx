@@ -17,15 +17,10 @@ import './styles/animations.css';
 function App() {
   const [selectedProject, setSelectedProject] = useState<ProjectType | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(true);
 
   useEffect(() => {
-    // Simulate loading time
-    const timer = setTimeout(() => {
-      setIsLoaded(true);
-    }, 1000);
-
-    return () => clearTimeout(timer);
+    setIsLoaded(true);
   }, []);
 
   const pageVariants = {

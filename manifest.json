@@ -1,0 +1,16 @@
+{
+  "name": "CINĒMA",
+  "short_name": "CINĒMA",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#d60209",
+  "description": "CINĒMA is a visionary production studio crafting exceptional cinematic experiences, feature films, commercials, and documentaries.",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    }
+  ]
+} 
