@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { ProjectType } from '../types';
 
@@ -23,16 +23,16 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, onNext, o
     return () => clearTimeout(timer);
   }, [project.id]);
 
-  const handleKeyDown = (e: KeyboardEvent) => {
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
     if (e.key === 'Escape') onClose();
     if (e.key === 'ArrowRight') onNext();
     if (e.key === 'ArrowLeft') onPrev();
-  };
+  }, [onClose, onNext, onPrev]);
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
+  }, [handleKeyDown]);
 
   const goToImage = (index: number) => {
     setActiveImage(index);

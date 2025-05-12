@@ -40,17 +40,6 @@ function App() {
     duration: 0.5
   };
 
-  const openModal = (project: ProjectType) => {
-    setSelectedProject(project);
-    setIsModalOpen(true);
-    document.body.style.overflow = 'hidden';
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    document.body.style.overflow = 'auto';
-  };
-
   const nextProject = () => {
     if (selectedProject) {
       const currentIndex = projects.findIndex(p => p.id === selectedProject.id);
