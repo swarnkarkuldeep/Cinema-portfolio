@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 
 const slides = [
   {
@@ -35,46 +35,9 @@ const variants = {
 
 const ScrollTabsShowcase = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    const startX = e.touches[0].clientX;
-    const startY = e.touches[0].clientY;
-
-    const handleTouchEnd = (e: React.TouchEvent) => {
-      const endX = e.changedTouches[0].clientX;
-      const endY = e.changedTouches[0].clientY;
-
-      const diffX = startX - endX;
-      const diffY = startY - endY;
-
-      // Prioritize vertical scroll for touch devices
-      if (Math.abs(diffY) > Math.abs(diffX)) {
-        if (diffY > 50 && currentSlide < slides.length - 1) {
-          // Swipe up
-          setCurrentSlide(prev => Math.min(prev + 1, slides.length - 1));
-        } else if (diffY < -50 && currentSlide > 0) {
-          // Swipe down
-          setCurrentSlide(prev => Math.max(prev - 1, 0));
-        }
-      }
-
-      // Remove event listener
-      document.removeEventListener('touchend', handleTouchEnd as unknown as EventListener);
-    };
-
-    // Add event listener
-    document.addEventListener('touchend', handleTouchEnd as unknown as EventListener);
-  };
-
   return (
     <div className="relative w-full mt-16">
       {slides.map((slide, idx) => (
-        <div
-          key={`touch-scroll-${idx}`}
-          className={`${idx === currentSlide ? 'block' : 'hidden'} h-screen w-full`}
-          onTouchStart={handleTouchStart}
-        >
         <div
           key={idx}
           className={`sticky top-0 h-screen flex ${slide.align} justify-center overflow-hidden ${slide.bg}`}
@@ -94,29 +57,13 @@ const ScrollTabsShowcase = () => {
             viewport={{ once: false, amount: 0.7 }}
             variants={variants}
           >
-            <video
-              className="absolute inset-0 w-full h-full object-cover z-0 opacity-60"
-              src={slide.video}
-              autoPlay
-              loop
-              muted
-              playsInline
-            />
-            <motion.div
-              className={`absolute z-10 max-w-3xl px-8 ${slide.textPos}`}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: false, amount: 0.7 }}
-              variants={variants}
-            >
-              <h2 className="text-5xl md:text-7xl font-extrabold mb-6 uppercase tracking-tight leading-tight">{slide.heading}</h2>
-              <p className="text-2xl md:text-3xl font-medium opacity-90 max-w-2xl">{slide.content}</p>
-            </motion.div>
-          </div>
+            <h2 className="text-5xl md:text-7xl font-extrabold mb-6 uppercase tracking-tight leading-tight">{slide.heading}</h2>
+            <p className="text-2xl md:text-3xl font-medium opacity-90 max-w-2xl">{slide.content}</p>
+          </motion.div>
         </div>
       ))}
     </div>
   );
 };
 
-export default ScrollTabsShowcase;
+export default ScrollTabsShowcase; 
