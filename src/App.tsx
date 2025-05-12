@@ -16,6 +16,9 @@ import InteractiveBackground from './components/InteractiveBackground';
 import ScrollTabsShowcase from './components/ScrollTabsShowcase';
 import './styles/animations.css';
 import './styles/scroll-animations.css';
+import ProjectPage from './components/ProjectPage';
+import { Routes, Route } from 'react-router-dom';
+import NotFound from './components/NotFound';
 
 function App() {
   const [selectedProject, setSelectedProject] = useState<ProjectType | null>(null);
@@ -91,10 +94,10 @@ function App() {
                 }}
               />
             </ParallaxSection>
+            <ScrollTabsShowcase />
             <ParallaxSection offset={80}>
               <About />
             </ParallaxSection>
-            <ScrollTabsShowcase />
             <ParallaxSection offset={100}>
               <Services />
             </ParallaxSection>
@@ -129,4 +132,16 @@ function App() {
   );
 }
 
-export default App;
+export { App };
+
+const AppRoutes = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="/projects/:id" element={<ProjectPage />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  );
+};
+
+export default AppRoutes;

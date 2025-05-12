@@ -1,35 +1,36 @@
 import { useState, useEffect, useRef } from 'react';
 import { Film, Camera, Monitor, Award, Users, Pencil, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useRef as useReactRef, useState as useReactState } from 'react';
 
 const SERVICES = [
   {
-    icon: <Film size={64} className="text-black" />,
+    icon: <Film size={64} className="text-white" />,
     title: 'Feature Film Production',
     description: 'Full-service production for feature-length films, from development and pre-production through filming and post-production.',
   },
   {
-    icon: <Monitor size={64} className="text-black" />,
+    icon: <Monitor size={64} className="text-white" />,
     title: 'Commercial Production',
     description: 'High-impact commercial and advertising content for brands looking to create visually stunning campaigns.',
   },
   {
-    icon: <Camera size={64} className="text-black" />,
+    icon: <Camera size={64} className="text-white" />,
     title: 'Cinematography',
     description: 'Expert cinematography services utilizing cutting-edge equipment and innovative techniques to achieve unique visual aesthetics.',
   },
   {
-    icon: <Pencil size={64} className="text-black" />,
+    icon: <Pencil size={64} className="text-white" />,
     title: 'Script Development',
     description: 'Collaborative script development and storytelling consultation to refine and elevate your narrative.',
   },
   {
-    icon: <Award size={64} className="text-black" />,
+    icon: <Award size={64} className="text-white" />,
     title: 'Festival Strategy',
     description: 'Strategic planning and submission services to maximize your film\'s festival potential and market presence.',
   },
   {
-    icon: <Users size={64} className="text-black" />,
+    icon: <Users size={64} className="text-white" />,
     title: 'Talent Packaging',
     description: 'Access to our network of actors, directors, and crew to assemble the perfect team for your production.',
   },
@@ -61,8 +62,35 @@ const Services: React.FC = () => {
   const handleMouseEnter = () => setIsPaused(true);
   const handleMouseLeave = () => setIsPaused(false);
 
+  const videoRef = useReactRef<HTMLVideoElement>(null);
+  const rafRef = useReactRef<number | null>(null);
+
+  useEffect(() => {
+    const vid = videoRef.current;
+    if (!vid) return;
+
+    const loopStart = 0;
+    const loopEnd = 11;
+
+    const checkLoop = () => {
+      if (vid.currentTime >= loopEnd) {
+        vid.currentTime = loopStart;
+        vid.play();
+      }
+      rafRef.current = requestAnimationFrame(checkLoop);
+    };
+
+    rafRef.current = requestAnimationFrame(checkLoop);
+
+    return () => {
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section id="services" className="py-24 md:py-36 px-0 bg-black">
+    <section id="services" className="py-24 md:py-36 px-0 bg-black relative overflow-hidden">
       <div className="w-full px-6 flex flex-col items-center">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-7 text-white tracking-tight">Our Services</h2>
@@ -83,34 +111,49 @@ const Services: React.FC = () => {
           >
             <ChevronLeft size={32} />
           </button>
-          <div className={`w-full shadow-2xl flex flex-col items-center text-center px-8 md:px-16 py-24 h-[520px] bg-white`} style={{ willChange: 'transform, opacity' }}>
-            <motion.div 
-              className="mb-12 flex items-center justify-center"
-              key={current}
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              {SERVICES[current].icon}
-            </motion.div>
-            <motion.h3 
-              className="text-3xl md:text-4xl font-bold mb-6 text-black"
-              key={`title-${current}`}
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              {SERVICES[current].title}
-            </motion.h3>
-            <motion.p 
-              className="text-black/80 text-xl mb-2"
-              key={`desc-${current}`}
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              {SERVICES[current].description}
-            </motion.p>
+          <div className="relative w-full flex flex-col items-center text-center px-8 md:px-16 py-24 h-[520px] overflow-hidden shadow-2xl" style={{ willChange: 'transform, opacity' }}>
+            {/* Carousel Card Background Video */}
+            <video
+              ref={videoRef}
+              className="absolute inset-0 w-full h-full object-cover z-0"
+              src="/videos/service.mp4"
+              autoPlay
+              loop={false}
+              muted
+              playsInline
+            />
+            {/* Overlay for readability */}
+            <div className="absolute inset-0 bg-black/70 z-10 pointer-events-none" />
+            {/* Carousel Card Content */}
+            <div className="relative z-20 w-full flex flex-col items-center">
+              <motion.div 
+                className="mb-12 flex items-center justify-center"
+                key={current}
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                {SERVICES[current].icon}
+              </motion.div>
+              <motion.h3 
+                className="text-3xl md:text-4xl font-bold mb-6 text-white"
+                key={`title-${current}`}
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                {SERVICES[current].title}
+              </motion.h3>
+              <motion.p 
+                className="text-white text-xl mb-2"
+                key={`desc-${current}`}
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                {SERVICES[current].description}
+              </motion.p>
+            </div>
           </div>
           <button
             onClick={goNext}

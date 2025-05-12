@@ -56,9 +56,9 @@ const Navigation: React.FC = () => {
           </a>
           
           <nav className="hidden md:flex space-x-8">
+            <button onClick={() => scrollTo('projects')} className="nav-link jp-hover-effect mix-blend-difference text-white">Projects</button>
             <button onClick={() => scrollTo('about')} className="nav-link jp-hover-effect mix-blend-difference text-white">About</button>
             <button onClick={() => scrollTo('services')} className="nav-link jp-hover-effect mix-blend-difference text-white">Services</button>
-            <button onClick={() => scrollTo('projects')} className="nav-link jp-hover-effect mix-blend-difference text-white">Projects</button>
             <button onClick={() => scrollTo('team')} className="nav-link jp-hover-effect mix-blend-difference text-white">Team</button>
             <button onClick={() => scrollTo('contact')} className="nav-link jp-hover-effect mix-blend-difference text-white">Contact</button>
           </nav>
@@ -109,13 +109,13 @@ const Navigation: React.FC = () => {
             <span>About</span>
             <span className="block text-[10px] text-white mt-1 tracking-widest mix-blend-difference text-white">概要</span>
           </button>
-          <button onClick={() => scrollTo('services')} className="text-2xl font-light tracking-wider hover:text-gray-300 transition-colors text-glow-on-hover mix-blend-difference text-white">
-            <span>Services</span>
-            <span className="block text-[10px] text-white mt-1 tracking-widest mix-blend-difference text-white">サービス</span>
-          </button>
           <button onClick={() => scrollTo('projects')} className="text-2xl font-light tracking-wider hover:text-gray-300 transition-colors text-glow-on-hover mix-blend-difference text-white">
             <span>Projects</span>
             <span className="block text-[10px] text-white mt-1 tracking-widest mix-blend-difference text-white">作品</span>
+          </button>
+          <button onClick={() => scrollTo('services')} className="text-2xl font-light tracking-wider hover:text-gray-300 transition-colors text-glow-on-hover mix-blend-difference text-white">
+            <span>Services</span>
+            <span className="block text-[10px] text-white mt-1 tracking-widest mix-blend-difference text-white">サービス</span>
           </button>
           <button onClick={() => scrollTo('team')} className="text-2xl font-light tracking-wider hover:text-gray-300 transition-colors text-glow-on-hover mix-blend-difference text-white">
             <span>Team</span>
