@@ -8,4 +8,4 @@
   status = 200
 
 [context.production]
-  environment = { NODE_VERSION = "20", NODE_ENV = "development", NPM_FLAGS = "--legacy-peer-deps" }
+  environment = { NODE_VERSION = "20", NODE_ENV = "production", NPM_FLAGS = "--legacy-peer-deps" }
