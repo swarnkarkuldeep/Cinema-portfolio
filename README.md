@@ -4,7 +4,7 @@ A modern, responsive cinema production company portfolio website built with Reac
 
 ## 🎬 Features
 
-- Responsive design for all device sizes
+- Responsive design for all devices
 - Modern UI with cinema-inspired aesthetics
 - Project showcase with modal details
 - Team member presentation
